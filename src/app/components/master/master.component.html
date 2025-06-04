@@ -1,1 +1,32 @@
-<p>master works!</p>
+<div class="row">
+  <div class="col-12 text-center mt-4">
+    <div class="btn-group">
+      <button
+        type="button"
+        (click)="changeTab('Roles')"
+        class="btn"
+        [ngClass]="currentComponent == 'Roles' ? 'btn-success' : 'btn-primary'"
+      >
+        Roles
+      </button>
+      <button
+        type="button"
+        (click)="changeTab('Destination')"
+        class="btn"
+        [ngClass]="
+          currentComponent == 'Destination' ? 'btn-success' : 'btn-primary'
+        "
+      >
+        Destination
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12" *ngIf="currentComponent == 'Roles'">
+    <app-roles></app-roles>
+  </div>
+  <div class="col-12" *ngIf="currentComponent == 'Destination'">
+    <app-designation></app-designation>
+  </div>
+</div>
