@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Client } from '../../model/class/Client';
 import { FormsModule } from '@angular/forms';
+import { Client } from '../../model/class/Client';
 
 @Component({
   selector: 'app-client',
@@ -12,8 +12,5 @@ export class ClientComponent {
   clientObj: Client = new Client();
   clientList: Client[] = [];
 
-
-  onSaveClient(){
-
-  }
+  onSaveClient() {}
 }

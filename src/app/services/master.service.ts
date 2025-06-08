@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 import { APIResponseModel } from '../model/interface/role';
 
 @Injectable({
@@ -10,7 +11,7 @@ export class MasterService {
 
   getDesignations() {
     return this.http.get<APIResponseModel>(
-      'https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllDesignation'
+      environment.API_URL + 'GetAllDesignation'
     );
   }
 }
