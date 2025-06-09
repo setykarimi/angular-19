@@ -17,6 +17,12 @@ export class ClientService {
     );
   }
 
+  getAllEmployee(): Observable<APIResponseModel> {
+    return this.http.get<APIResponseModel>(
+      environment.API_URL + 'GetAllEmployee'
+    );
+  }
+
   addUpdate(obj: Client): Observable<APIResponseModel> {
     return this.http.post<APIResponseModel>(
       environment.API_URL + 'AddUpdateClient',
@@ -30,5 +36,11 @@ export class ClientService {
     );
   }
 
-  
+  addClientProjectUpdate(obj: Client): Observable<APIResponseModel> {
+    return this.http.post<APIResponseModel>(
+      environment.API_URL + 'AddUpdateClientProject',
+      obj
+    );
+  }
+
 }
