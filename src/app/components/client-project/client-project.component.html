@@ -1,1 +1,142 @@
-<p>client-project works!</p>
+<div class="row">
+  <div class="col-8">
+    <div class="card">
+      <div class="card-header bg-success">Client List</div>
+      <div class="card-body">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Person Name</th>
+              <th>Company Name</th>
+              <th>Address</th>
+              <th>City</th>
+              <th>Pin Code</th>
+              <th>State</th>
+              <th>Employee Strength</th>
+              <th>GstNo</th>
+              <th>Contact No</th>
+              <th>RegNo</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <div class="card">
+      <div class="card-header bg-success">New Client</div>
+      <div class="card-body">
+        <form [formGroup]="projectForm">
+          <div class="row">
+            <div class="col-6">
+              <label for="">Project Name</label>
+              <input
+                type="text"
+                formcontrolname="prjectname"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Start Date</label>
+              <input
+                type="date"
+                formcontrolname="startDate"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Expected EndDate</label>
+              <textarea
+                type="date"
+                formcontrolname="expectedEndData"
+                class="form-control"
+              ></textarea>
+            </div>
+
+            <div class="col-6">
+              <label for="">Completed Date</label>
+              <input
+                type="text"
+                formcontrolname="completedDate"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Contact Person</label>
+              <input
+                type="text"
+                formcontrolname="contactPerson"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Contact Person ContactNo</label>
+              <input
+                type="text"
+                formcontrolname="contactPersonContactNo"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Total EmpWorking</label>
+              <input
+                type="text"
+                formcontrolname="totalEmpWorking"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Project Cost</label>
+              <input
+                type="text"
+                formcontrolname="projectCost"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Project Description</label>
+              <textarea
+                type="text"
+                formcontrolname="projectDetails"
+                class="form-control"
+              ></textarea>
+            </div>
+            <div class="col-6">
+              <label for="">Contact Person EmailId</label>
+              <input
+                type="text"
+                formcontrolname="contactPersonEmailId"
+                class="form-control"
+              />
+            </div>
+            <div class="col-6">
+              <label for="">Client Id</label>
+              <select formControlName="clientId" class="form-control">
+                <option value="">Select Client</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label for="">Lead By</label>
+              <select formControlName="leadByEmpId" class="form-control">
+                <option value="">Select Employee</option>
+              </select>
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col-6 text-center">
+              <button class="btn btn-secondary">Reset</button>
+            </div>
+            <div class="col-6 text-center">
+              <button class="btn btn-success">
+                <!-- {{ clientObj.clientId !== 0 ? "Update Client" : "Save client" }} -->
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
