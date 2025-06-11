@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, JsonPipe, UpperCasePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Client } from '../../model/class/Client';
@@ -7,11 +7,13 @@ import { ClientService } from '../../services/client.service';
 
 @Component({
   selector: 'app-client',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css',
 })
 export class ClientComponent implements OnInit {
+  currentDate: Date = new Date();
+
   clientObj: Client = new Client();
   clientList: Client[] = [];
 

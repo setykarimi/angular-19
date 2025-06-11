@@ -1,7 +1,10 @@
+<p>{{ clientObj | json }}</p>
 <div class="row">
   <div class="col-8">
     <div class="card">
-      <div class="card-header bg-success">Client List</div>
+      <div class="card-header bg-success">
+        Client List - {{ currentDate | date : "dd-MMM-yyyy" }}
+      </div>
       <div class="card-body">
         <table class="table table-bordered">
           <thead>
@@ -23,7 +26,7 @@
           <tbody>
             <tr *ngFor="let client of clientList; let srno = index">
               <td>{{ srno + 1 }}</td>
-              <td>{{ client.contactPersonName }}</td>
+              <td>{{ client.contactPersonName | uppercase }}</td>
               <td>{{ client.companyName }}</td>
               <td>{{ client.address }}</td>
               <td>{{ client.city }}</td>
@@ -163,7 +166,11 @@
               <button class="btn btn-secondary">Reset</button>
             </div>
             <div class="col-6 text-center">
-              <button class="btn btn-success" (click)="onSaveClient()" [disabled]="!form.valid">
+              <button
+                class="btn btn-success"
+                (click)="onSaveClient()"
+                [disabled]="!form.valid"
+              >
                 {{ clientObj.clientId !== 0 ? "Update Client" : "Save client" }}
               </button>
             </div>
