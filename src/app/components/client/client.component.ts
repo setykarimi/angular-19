@@ -5,10 +5,11 @@ import { Observable } from 'rxjs';
 import { Client } from '../../model/class/Client';
 import { APIResponseModel } from '../../model/interface/role';
 import { ClientService } from '../../services/client.service';
+import { MyButtonComponent } from "../../reusableComponent/my-button/my-button.component";
 
 @Component({
   selector: 'app-client',
-  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe, AsyncPipe],
+  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe, AsyncPipe, MyButtonComponent],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css',
 })
@@ -32,7 +33,7 @@ export class ClientComponent implements OnInit {
     });
   }
 
-  onSaveClient() {
+  onSaveClient(data:string) {
     this.clientService
       .addUpdate(this.clientObj)
       .subscribe((res: APIResponseModel) => {
