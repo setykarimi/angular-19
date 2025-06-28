@@ -1,4 +1,11 @@
 <p>{{ clientObj | json }}</p>
+<ul>
+  @for (item of userList$|async; track $index) {
+  <li>
+    {{ item.user }}
+  </li>
+  }
+</ul>
 <div class="row">
   <div class="col-8">
     <div class="card">
