@@ -170,16 +170,22 @@
           </div>
           <div class="row pt-2">
             <div class="col-6 text-center">
-              <button class="btn btn-secondary">Reset</button>
+              <app-my-button
+                [btnClass]="'btn btn-primary'"
+                [btnText]="
+                  clientObj.clientId !== 0 ? 'Update Client' : 'Save client'
+                "
+                (onBtnClicked)="onSaveClient($event)"
+              ></app-my-button>
             </div>
             <div class="col-6 text-center">
-              <button
+              <!-- <button
                 class="btn btn-success"
                 (click)="onSaveClient()"
                 [disabled]="!form.valid"
               >
                 {{ clientObj.clientId !== 0 ? "Update Client" : "Save client" }}
-              </button>
+              </button> -->
             </div>
           </div>
         </form>
