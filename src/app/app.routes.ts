@@ -20,7 +20,22 @@ export const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      
+      {
+        path: 'master',
+        component: MasterComponent,
+      },
+      {
+        path: 'employee',
+        component: EmployeeComponent,
+      },
+      {
+        path: 'client',
+        component: ClientComponent,
+      },
+      {
+        path: 'client-project',
+        component: ClientProjectComponent,
+      },
     ],
   },
 ];
