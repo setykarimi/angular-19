@@ -13,10 +13,11 @@ import {
 } from '../../model/interface/role';
 import { ClientService } from '../../services/client.service';
 import { DatePipe } from '@angular/common';
+import { AlertComponent } from "../../reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-client-project',
-  imports: [ReactiveFormsModule, DatePipe],
+  imports: [ReactiveFormsModule, DatePipe, AlertComponent],
   templateUrl: './client-project.component.html',
   styleUrl: './client-project.component.css',
 })
